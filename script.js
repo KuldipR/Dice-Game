@@ -81,7 +81,8 @@ function newGame() {
     score = 0;
     turn = 0;
     currentScore1 = 0;
-    currentScore2 = 0
+    currentScore2 = 0;
+    lastDice=0;
     let playerScr1 = document.getElementById(`score--0`)
     let playerScr2 = document.getElementById(`score--1`)
     let crtScore = document.getElementById(`current--0`)
