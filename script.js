@@ -2,6 +2,7 @@ let score = 0;
 let turn = 0;
 let currentScore1 = 0;
 let currentScore2 = 0;
+let lastDice = 0;
 newGame();
 btnRoll = document.getElementById(`rDice`)
 btnHold = document.getElementById(`ho`)
@@ -13,8 +14,9 @@ function rollDice() {
     let img = document.querySelector(`.img`)
     let random = Math.floor(Math.random() * 6 + 1);
     let playerScr = document.getElementById(`score--${turn}`)
-    if (random === 1) {
+    if (random === lastDice) {
         score = 0
+        lastDice=0
         playerScr.innerText = `${score}`
         if (turn == 0) {
             document.querySelector(`.player--${turn}`).classList.remove(`player--active`)
@@ -30,6 +32,7 @@ function rollDice() {
         img.innerHTML = `<img src="dice-${random}.png" alt="Playing dice" class="dice" /> `
     }
     else {
+        lastDice = randomm;
         img.innerHTML = `<img src="dice-${random}.png" alt="Playing dice" class="dice" /> `
         score = score + random;
 
